@@ -85,7 +85,7 @@ const session = await stripe.checkout.sessions.create({
   });
 });
 
-app.post("/stripe/webhook", async (req: Request, res: Response) => {
+/* app.post("/stripe/webhook", async (req: Request, res: Response) => {
   
   const event = req.body;
   
@@ -115,4 +115,4 @@ app.post("/stripe/webhook", async (req: Request, res: Response) => {
   
     res.json({ received: true });
   }
-})
+}) */
