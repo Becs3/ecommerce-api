@@ -167,7 +167,7 @@ const createOrderItem = async (data: IOrderItem) => {
   }
 }
 
-export const updateOrder = async (orderId: string, data: { payment_status: string, payment_id: string, order_status: string }) => {
+/* export const updateOrder = async (orderId: string, data: { payment_status: string, payment_id: string, order_status: string }) => {
   try {
     const sql = `
       UPDATE orders 
@@ -189,8 +189,8 @@ export const updateOrder = async (orderId: string, data: { payment_status: strin
     return false;
   }
 };
-
-/* export const updateOrder = async (req: Request, res: Response) => {
+ */
+ export const updateOrder = async (req: Request, res: Response) => {
   const id: string = req.params.id;
   const { payment_status, payment_id, order_status }: IOrder = req.body;
   
@@ -209,7 +209,7 @@ export const updateOrder = async (orderId: string, data: { payment_status: strin
   } catch(error) {
     res.status(500).json({error: logError(error)})
   }
-} */
+} 
 
 export const deleteOrder = async (req: Request, res: Response) => {
   const id: string = req.params.id;
