@@ -45,7 +45,7 @@ export default (req: VercelRequest, res: VercelResponse) => {
   return app(req, res);
 };
 
-const stripe = require('stripe')(process.env.SECRET_KEY);
+/* const stripe = require('stripe')(process.env.SECRET_KEY);
 
 app.post('/stripe/create-checkout-session-hosted', async (req: Request, res: Response) => {
   
@@ -83,7 +83,7 @@ const session = await stripe.checkout.sessions.create({
     session_id: session.id 
     //clientSecret: session.client_secret
   });
-});
+}); */
 
 /* app.post("/stripe/webhook", async (req: Request, res: Response) => {
   
