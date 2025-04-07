@@ -1,11 +1,12 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
 import express, {Request, Response} from "express";
 import {connectDB} from "./config/db";
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import { VercelRequest, VercelResponse } from "@vercel/node";
 
-import dotenv from 'dotenv';
-dotenv.config();
 const app = express();
 
 // Middleware
@@ -46,6 +47,10 @@ export default (req: VercelRequest, res: VercelResponse) => {
 };
 
 const stripe = require('stripe')(process.env.SECRET_KEY);
+console.log("Stripe key:", process.env.SECRET_KEY);
+if (!process.env.SECRET_KEY) {
+  throw new Error("Missing SECRET_KEY in environment variables");
+}
 
 app.post('/stripe/create-checkout-session-hosted', async (req: Request, res: Response) => {
   
