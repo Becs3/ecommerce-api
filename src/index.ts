@@ -14,7 +14,7 @@ app.use(express.json())
 app.use(cookieParser());
 app.use(cors({
   // origin: "http://localhost:5173",
-  origin: "https://ecommerce-client-git-main-rebeccas-projects-424867e9.vercel.app",
+  origin: "https://eshop-api-lime.vercel.app",
   credentials: true,  // ✅ Allows cookies
 }));
 
